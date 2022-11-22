@@ -99,7 +99,7 @@ The ball’s speed is fixed and increases slightly every time it bounces off **a
 
 When bouncing off the top or bottom of the court, the angle of incidence equals the angle of reflection
 
-![Angles when the ball bounces off the top or bottom of the court](images/anglee.png)
+![Angles when the ball bounces off the top or bottom of the court](images/angle.png)
 
 ## Paddle Mechanics
 
@@ -130,7 +130,7 @@ When bouncing off the top or bottom of the court, the angle of incidence equals 
 
 <details>
 <summary><code style="white-space:nowrap;">  train()</code></summary>
-Write this to train your network from experience in the environment. 
+Write this to train your network from experience in the environment.
 <br />
 <br />
 Return the trained network so it can be saved.
@@ -153,7 +153,7 @@ The environment class controls the game and runs the opponent. It should be used
 See example usage in <code style="white-space:nowrap;">play_pong()</code>.
 <br />
 <br />
-The opponent's <code style="white-space:nowrap;">choose_move</code> function is input at initialisation (when <code style="white-space:nowrap;">Env(opponent_choose_move)</code> is called). Every time you call <code style="white-space:nowrap;">Env.step()</code>, both moves are taken - yours your opponent's. Then the ball moves - if it hits a paddle then it will bounce off. Your opponent sees a 'mirrored' version of the arena, so from each player's perspective, the arena mechanics are the same. The <code style="white-space:nowrap;">env</code> also has 
+The opponent's <code style="white-space:nowrap;">choose_move</code> function is input at initialisation (when <code style="white-space:nowrap;">Env(opponent_choose_move)</code> is called). Every time you call <code style="white-space:nowrap;">Env.step()</code>, both moves are taken - yours your opponent's. Then the ball moves - if it hits a paddle then it will bounce off. Your opponent sees a 'mirrored' version of the arena, so from each player's perspective, the arena mechanics are the same. The <code style="white-space:nowrap;">env</code> also has
     <br />
     <br />
 
