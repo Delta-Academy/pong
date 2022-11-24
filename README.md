@@ -42,7 +42,7 @@ Since this is the final week, this week's points in the competition **count doub
 
 ### Need to Know
 
-🚨🚨🚨 The `states_per_step` input to `PongEnv` on initialization controls the speed of the game (how far the balls and paddles move in one timestep). It's highly recommended to increase this greater than `1` during training to reduce the number of timesteps between rewards. Be aware that the tournament will be played with this variable set to `1` 🚨🚨🚨.
+🚨🚨🚨 The `steps_per_state` input to `PongEnv` on initialization controls the speed of the game (how far the balls and paddles move in one timestep). It's highly recommended to increase this greater than `1` during training to reduce the number of timesteps between rewards. Be aware that the tournament will be played with this variable set to `1` 🚨🚨🚨.
 
 ### Rewards :moneybag:
 
@@ -199,6 +199,6 @@ Inputs:
 1. Discuss which RL algorithm to use and what the network should look like
 2. **Write `train()`**, borrowing from past exercises
 3. **Print out important values** - otherwise bugs in your code may slip through the cracks :astonished:
-4. Ponder what you want to set `timesteps_per_step` to. What are the tradeoffs when it's really large? What about when it's really small? Think about how this might affect the values and how gamma's (the time discount factor) meaning might change.
+4. Ponder what you want to set `steps_per_state` to. What are the tradeoffs when it's really large? What about when it's really small? Think about how this might affect the values and how gamma's (the time discount factor) meaning might change.
 5. Think about what behaviour maximizes the reward function. Based on this, what rewards should you give your agent during training?
 6. Test out how fast it is to train in the environment and think about whether online or episodic updates are better. Perhaps play with both if you have time.
