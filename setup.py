@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="delta_GAME",
+    name="delta_pong",
     version="0.1",
-    packages=["delta_GAMENAME"],
-    description="DESCRIPTION OF GAME",
-    author="AUTHOR",
-    author_email="AUTHOR-EMAIL",
+    packages=["delta_pong"],
+    description="Pong with an openAi gym interface",
+    author="James Rowland",
+    author_email="james@joindeltaacademy.com",
 )

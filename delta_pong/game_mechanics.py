@@ -23,8 +23,8 @@ HERE = Path(__file__).parent.resolve()
 VALID_ACTIONS = {-1, 0, 1}
 
 
-def load_network(team_name: str) -> nn.Module:
-    net_path = HERE / f"{team_name}_network.pt"
+def load_network(team_name: str, umbrella_folder: Path = HERE) -> nn.Module:
+    net_path = umbrella_folder / f"{team_name}_network.pt"
     assert (
         net_path.exists()
     ), f"Network saved using TEAM_NAME='{team_name}' doesn't exist! ({net_path})"
@@ -473,16 +473,19 @@ class PongEnv:
         # Top wall
         viz_string = " " + "_" * self.viz_dims[0] + "\n"
 
+        bat_char = "🏓"
+        ball_char = "⚽"
+
         for y in reversed(range(self.viz_dims[1])):
             # Add paddle_1
-            viz_string += "|" if y == paddle_1_y else " "
+            viz_string += bat_char if y == paddle_1_y else " "
             # Add the ball and spaces
             if y == ball_y:
-                viz_string += " " * (ball_x - 1) + "*" + " " * (self.viz_dims[0] - ball_x)
+                viz_string += " " * (ball_x - 1) + ball_char + " " * (self.viz_dims[0] - ball_x)
             else:
                 viz_string += " " * self.viz_dims[0]
             # Add paddle_1
-            viz_string += "|" if y == paddle_2_y else " "
+            viz_string += bat_char if y == paddle_2_y else " "
             # Add newline
             viz_string += "\n"
         # Bottom wall
