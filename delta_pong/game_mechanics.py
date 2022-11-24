@@ -473,8 +473,8 @@ class PongEnv:
         # Top wall
         viz_string = " " + "_" * self.viz_dims[0] + "\n"
 
-        bat_char = "🏓"
-        ball_char = "⚽"
+        bat_char = "|"
+        ball_char = "*"
 
         for y in reversed(range(self.viz_dims[1])):
             # Add paddle_1
@@ -503,7 +503,8 @@ LIGHT_GRAY_COLOR = (200, 200, 200)
 EXTRA_WIDTH = 10
 
 
-VISUALS_DIMS = (1200, 800)
+# VISUALS_DIMS = (1200, 800)
+VISUALS_DIMS = (1, 1)
 ORIGIN = (150, 50)
 
 
@@ -529,6 +530,8 @@ def draw_game(env: PongEnv, screen: pygame.Surface) -> None:
     pixel_game_width = COURT_WIDTH + EXTRA_WIDTH
     pixel_game_height = COURT_HEIGHT
 
+    # Draw background of the board
+    # Draw background of the board
     # Draw background of the board
     pygame.gfxdraw.box(
         screen,
@@ -652,8 +655,8 @@ def human_player(*args, **kwargs) -> int:
             quit()
     is_key_pressed = pygame.key.get_pressed()
     if is_key_pressed[pygame.K_UP]:
-        return -1
-    elif is_key_pressed[pygame.K_DOWN]:
         return 1
+    elif is_key_pressed[pygame.K_DOWN]:
+        return -1
 
     return 0
